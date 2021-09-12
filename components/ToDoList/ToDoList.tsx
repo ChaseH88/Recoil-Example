@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import { useRecoilValue, useSetRecoilState } from "node_modules/recoil";
-import { todoListState, deleteAllToDoItemAction, updateAllToDoItemAction } from 'recoil/atoms';
+import { todoListState, deleteAllToDoItemAction, updateAllToDoItemAction } from 'recoil/todo-atoms';
 
 // Styles
 import { ToDoListStyle } from './styled';

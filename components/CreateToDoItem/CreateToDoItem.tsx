@@ -1,12 +1,13 @@
 import { FC, useState } from 'react';
 import { useSetRecoilState } from "node_modules/recoil";
-import { todoListState, createToDoItemAction } from 'recoil/atoms';
+import { todoListState, createToDoItemAction } from 'recoil/todo-atoms';
 
 // Styles
 import { CreateToDoItemStyle } from './styled';
 
 // Semantic UI
 import { Input, Button } from 'semantic-ui-react';
+import { RandomQuote } from '../RandomQuote';
 
 const CreateToDoItem: FC = (): JSX.Element => {
 
@@ -38,8 +39,13 @@ const CreateToDoItem: FC = (): JSX.Element => {
   return (
     <CreateToDoItemStyle>
       <div className="container">
-        <Input type="text" value={inputValue} onChange={handleChange} />
-        <Button color='blue' onClick={handleAddItem}>Add</Button>
+        <div className="left">
+          <RandomQuote />
+        </div>
+        <div className="right">
+          <Input type="text" value={inputValue} onChange={handleChange} />
+          <Button color='blue' onClick={handleAddItem}>Add</Button>
+        </div>
       </div>
     </CreateToDoItemStyle>
   )
